@@ -14,24 +14,24 @@ public class BurgerMoveIngredientTest {
     private Burger burger;
 
     @Mock
-    private Ingredient mockIngredient1;
+    private Ingredient mockWhiteIngredient;
 
     @Mock
-    private Ingredient mockIngredient2;
+    private Ingredient mockBlackIngredient;
 
     @Before
     public void setUp() {
         burger = new Burger();
-        burger.addIngredient(mockIngredient1);
-        burger.addIngredient(mockIngredient2);
+        burger.addIngredient(mockWhiteIngredient);
+        burger.addIngredient(mockBlackIngredient);
         System.out.println(burger.ingredients);
     }
 
     @Test
     public void testMoveIngredientSuccess() {
         burger.moveIngredient(0, 1);
-        assertEquals(mockIngredient2, burger.ingredients.get(0));
-        assertEquals(mockIngredient1, burger.ingredients.get(1));
+        assertEquals(mockBlackIngredient, burger.ingredients.get(0));
+        assertEquals(mockWhiteIngredient, burger.ingredients.get(1));
         System.out.println(burger.ingredients);
     }
 }
